@@ -39,7 +39,7 @@ def submited(request):
 				# 	)
 				# entry.save();
 				# msg = "Thank You For registration in SCPMR, our team will contact you shortly. \n www.shoffex.com"
-				# sendSMS('sotari.biz@gmail.com', 'da1e1331d30c4dcff5a4780b52fa9fb327764bb1', mob , 'TXTLCL', msg)
+				# sendSMS('', 'da1e1331d30c4dcff5a4780b52fa9fb3277641bb', mob , 'TXTLCL', msg)
 				return render(request, "core/submited.html", {})
 
 	return HttpResponseRedirect('/')
