@@ -1,0 +1,98 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Care Point Manager</title>
+	<link rel="icon" href="{% static 'image/favicon.ico' %}" type="image/x-icon">
+
+	{% include "head_css.html" %}
+	
+	<style>
+	.transbox {
+		  margin: 30px;
+		  background-color: #000;
+		  border: 1px solid black;
+		  border-radius: 10px;
+		  opacity: 0.8;
+		  filter: alpha(opacity=60); /* For IE8 and earlier */
+		}
+
+	</style>
+</head>
+
+<body background="{% static 'image/17.jpg' %}" style=" background-size:cover;background-repeat: no-repeat;background-size: 1290px 760px;">
+{% if error == 'yes' %}
+	<div class="alert alert-danger">
+	    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	    <strong>Mobile Number</strong> already Register.
+	 </div>
+{% endif %}
+<div class="container-fluid">
+	<img src="{% static 'image/logo.jpeg' %}" style="height: 50px;margin-left: 20px;" class="img-responsive hidden-lg hidden-md">
+
+	<img src="{% static 'image/logo.jpeg' %}" style="height: 50px;margin-left: 240px;" class="img-responsive hidden-xs hidden-sm">
+	<div class="row">
+		<div class="col-lg-6 " style="margin-top: 50px;text-shadow: 2px 1px #3366ff;margin-left: 50px;">
+			<h3 style="color:black;font-size: 40px;">Start Your</h3>
+			<h2 style="color:black;font-size: 60px;">Online Business</h2>
+			<h1 style="color:black;font-size: 80px;">Now - FREE</h1>
+			<!-- <ul style="color: white; font-size: x-large;">
+				<li><span style="color:red;">CARE POINT</span> Opportunity with over National & International Brand Partner with <a href="http://www.shoffex.com">Shoffex.com</a></li>
+				<li>Start Your Own <span style="color:red;">BUSINESS.</span></li>
+				<li>Add a New <span style="color:red;">BRANCH</span> To The Family BUSINESS.</li>
+				<li>No RISK Maximum <span style="color:red;">PROFIT.</span></li>
+				<li><span style="color:red;">ZERO</span> product Investment</li>
+				<li><span style="color:red;">ZERO</span> Office Expenses.</li>
+				<li><span style="color:red;">100%</span> Refundable DEPOSIT.</li>
+			</ul>
+ -->
+			<!-- <div class="hidden-xs text-center" style="color:white; margin-top: 40px;"> 
+				<h4>To Know More Pelase Register <span class="glyphicon glyphicon-hand-right"></span> </h4>
+			</div>
+			<div class="hidden-lg text-center" style="color:white; margin-top: 40px;"> 
+				<h4>To Know More Pelase Register <span class="glyphicon glyphicon-hand-down"></span> </h4>
+			</div> -->
+			
+			
+			<div class="col-lg-8">
+			<h3 style="color:white;text-shadow: 1px 1px #3366ff;margin-left: -5px;" class="text-center transbox">Shoffex Care Point Manager Registration</h3>
+				<form action="/submited/" method="post">
+				{% csrf_token %}
+					<input type="text" name="name" class="form-control" placeholder="Full Name"><br>
+					<input type="text" name="mobile" class="form-control" placeholder="Contact No"><br>
+					<button class="btn btn-block btn-lg btn-success" style="font-size: 20px;font-weight: bold;">Start Now</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="margin-top: 120px;background-color: #00aced;">
+
+		<h3 style="color:white;" align="center">Key Features</h3>
+		
+		<div class="col-lg-4 text-center" style="margin-top: 50px;">
+			<img class="text-center" src="{% static 'image/bu.png' %}" style="height: 150px;" class="img-responsive">
+			<h3 style="color:white; font-size: xx-large;">Start Your Own <span style="color:#ff3300; text-shadow: 0px 0px black;">BUSINESS.</span></h3>
+		</div>
+
+		<div class="col-lg-4 text-center" style="margin-top: 50px;">
+			<img class="text-center" src="{% static 'image/no-risk.png' %}" style="height: 150px;" class="img-responsive">
+			<h3 style="color:white; font-size: xx-large;">no RISK maximum <span style="color:#ff3300; text-shadow: 0px 0px black;">PROFIT.</span></h3>
+		</div>
+
+		<div class="col-lg-4 text-center" style="margin-top: 50px;">
+			<img class="text-center" src="{% static 'image/no.png' %}" style="height: 150px;" class="img-responsive">
+			<h3 style="color:white; font-size: xx-large;">no<span style="color:#ff3300; text-shadow: 0px 0px black;">INVESTMENT.</span></h3>
+		</div>
+	</div>
+
+	<!-- footer -->
+	<div class="row">
+		<div class="col-lg-12 text-center" style="background-color: #3366ff;color:white;opacity: 0.9;">
+			<h6>All rights reserved by shoffex.com</h6>
+		</div>
+	</div>
+</div>
+</body>
+</html>
